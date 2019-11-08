@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.brzomessages.communication";
+option java_outer_classname = "CommunicationProto";
+
+package communication;
+
+// The greeting service definition.
+service Communication {
+  // Sends a greeting
+  rpc UpdateToken (UpdateFirebaseToken) returns (ResultMessages) {}
+}
+
+// The request message containing the user's name.
+message UpdateFirebaseToken {
+  string KeyAccess = 1;
+  string FirebaseToken = 2;
+}
+
+// The response message containing the greetings
+message ResultMessages {
+  bool Success = 1;
+  string error = 2;
+  string message = 3;
+  string result = 4;
+}
