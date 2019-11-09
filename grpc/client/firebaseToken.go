@@ -3,14 +3,12 @@ package client
 import (
 	"context"
 	"fmt"
-	"os"
 	"time"
 
 	"github.com/adarosci/brzomessage-common/grpc/communication"
 	"google.golang.org/grpc"
 )
 
-var address = os.Getenv("grpc_host")
 var conn *grpc.ClientConn
 
 // FirebaseTokenCommunication communication
@@ -18,7 +16,7 @@ type FirebaseTokenCommunication struct{}
 
 func init() {
 	var err error
-	conn, err = grpc.Dial(address, grpc.WithInsecure(), grpc.WithBlock())
+	conn, err = grpc.Dial("localhost:50051", grpc.WithInsecure(), grpc.WithBlock())
 	if err != nil {
 		fmt.Printf("did not connect: %v", err)
 	}
