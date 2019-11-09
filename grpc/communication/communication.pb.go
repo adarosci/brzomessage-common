@@ -144,22 +144,24 @@ func init() {
 func init() { proto.RegisterFile("communication.proto", fileDescriptor_b64068f22c460ac1) }
 
 var fileDescriptor_b64068f22c460ac1 = []byte{
-	// 239 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x6c, 0x91, 0x3f, 0x4b, 0xc4, 0x40,
-	0x10, 0xc5, 0x8d, 0x7f, 0x4e, 0x6f, 0x24, 0x16, 0x73, 0x22, 0x8b, 0x28, 0xc8, 0x62, 0x61, 0x95,
-	0x42, 0x3b, 0x3b, 0x4f, 0xb0, 0x11, 0xe1, 0x88, 0x5a, 0x58, 0x26, 0xeb, 0x70, 0x04, 0x4d, 0x26,
-	0xcc, 0x6c, 0x0a, 0xfd, 0xf4, 0x72, 0xbb, 0x39, 0xce, 0x15, 0xcb, 0xf7, 0xf6, 0xcd, 0x63, 0x7e,
-	0xb3, 0x30, 0x73, 0xdc, 0xb6, 0x43, 0xd7, 0xb8, 0xca, 0x37, 0xdc, 0x15, 0xbd, 0xb0, 0x67, 0xcc,
-	0x13, 0xd3, 0xbe, 0xc1, 0xec, 0xb5, 0x7f, 0xaf, 0x3c, 0x3d, 0x34, 0x42, 0x75, 0xa5, 0xf4, 0xc2,
-	0x1f, 0xd4, 0xe1, 0x19, 0x4c, 0x1f, 0xe9, 0xeb, 0xce, 0x39, 0x52, 0x35, 0xd9, 0x45, 0x76, 0x35,
-	0x2d, 0x37, 0x06, 0x5e, 0x42, 0x9e, 0xc4, 0xcd, 0x76, 0x48, 0xa4, 0xa6, 0x15, 0x38, 0x2a, 0x49,
-	0x87, 0x4f, 0xff, 0x44, 0xaa, 0xd5, 0x92, 0x14, 0x0d, 0xec, 0x3f, 0x0f, 0x9b, 0xce, 0x83, 0x72,
-	0x2d, 0xf1, 0x18, 0xf6, 0x48, 0x84, 0x65, 0x6c, 0x8a, 0x62, 0x95, 0x6f, 0xe3, 0xac, 0xd9, 0x09,
-	0xfe, 0x5a, 0xe2, 0x09, 0x4c, 0x24, 0x74, 0x9b, 0xdd, 0xf0, 0x30, 0xaa, 0x6b, 0x07, 0xf9, 0xfd,
-	0x6f, 0x3e, 0x2c, 0xe1, 0x30, 0xf2, 0x45, 0x2e, 0x5b, 0xa4, 0x37, 0xf9, 0x87, 0xfd, 0xf4, 0xfc,
-	0x4f, 0x26, 0x85, 0xb0, 0x5b, 0xf3, 0x5b, 0xb0, 0x0d, 0x17, 0x4b, 0xe9, 0x5d, 0x51, 0xcb, 0x37,
-	0x8f, 0x3b, 0x69, 0x3a, 0x36, 0xc7, 0x64, 0x91, 0xc5, 0xea, 0xf8, 0x8b, 0xac, 0x9e, 0x84, 0x5f,
-	0xb8, 0xf9, 0x09, 0x00, 0x00, 0xff, 0xff, 0xbe, 0x0d, 0xf5, 0x5e, 0x9c, 0x01, 0x00, 0x00,
+	// 267 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x92, 0x31, 0x4f, 0xfb, 0x30,
+	0x10, 0xc5, 0xff, 0xe9, 0x1f, 0x0a, 0x39, 0x28, 0xc3, 0x15, 0x21, 0x0b, 0x81, 0x84, 0x2c, 0x06,
+	0xa6, 0x0c, 0xb0, 0xb1, 0xb5, 0x48, 0x2c, 0x08, 0x29, 0x4a, 0x61, 0x60, 0x74, 0xdc, 0x53, 0x65,
+	0xd1, 0xc4, 0xd6, 0x39, 0x19, 0xca, 0x47, 0xe0, 0x53, 0xa3, 0x3a, 0xa9, 0x8a, 0x2b, 0xc6, 0x8e,
+	0xef, 0xf9, 0xdd, 0x4f, 0x7e, 0xa7, 0x83, 0xb1, 0xb6, 0x55, 0xd5, 0xd6, 0x46, 0xab, 0xc6, 0xd8,
+	0x3a, 0x73, 0x6c, 0x1b, 0x8b, 0xa3, 0xc8, 0x94, 0x1f, 0x30, 0x7e, 0x77, 0x73, 0xd5, 0xd0, 0xb3,
+	0x61, 0x2a, 0x95, 0xa7, 0x37, 0xfb, 0x49, 0x35, 0x5e, 0x41, 0xfa, 0x42, 0xab, 0x89, 0xd6, 0xe4,
+	0xbd, 0x48, 0x6e, 0x92, 0xbb, 0xb4, 0xd8, 0x1a, 0x78, 0x0b, 0xa3, 0x28, 0x2e, 0x06, 0x21, 0x11,
+	0x9b, 0x92, 0xe1, 0xac, 0x20, 0xdf, 0x2e, 0x9b, 0x57, 0xf2, 0x5e, 0x2d, 0xc8, 0xa3, 0x80, 0xa3,
+	0x59, 0xbb, 0x65, 0x1e, 0x17, 0x1b, 0x89, 0xe7, 0x70, 0x48, 0xcc, 0x96, 0x7b, 0x52, 0x27, 0xd6,
+	0xf9, 0xaa, 0x9b, 0x15, 0xff, 0x83, 0xbf, 0x91, 0x78, 0x01, 0x43, 0x0e, 0x6c, 0x71, 0x10, 0x1e,
+	0x7a, 0x75, 0xff, 0x3d, 0xd8, 0xf9, 0x1a, 0xe6, 0x90, 0x76, 0x05, 0x27, 0xce, 0xa0, 0xcc, 0xe2,
+	0x95, 0xfc, 0x51, 0xfd, 0xf2, 0x7a, 0x27, 0x13, 0x77, 0x90, 0xff, 0xb0, 0x80, 0x93, 0x9e, 0x38,
+	0xaf, 0x4c, 0xbd, 0x1f, 0xe6, 0x0c, 0x4e, 0xbb, 0xb9, 0x5c, 0xad, 0x9c, 0x5a, 0xee, 0x05, 0x3a,
+	0x7d, 0x04, 0x69, 0x6c, 0xb6, 0x60, 0xa7, 0xb3, 0x92, 0xbf, 0x6c, 0xbf, 0x3b, 0x1f, 0x8f, 0x4d,
+	0xf1, 0xe9, 0xb7, 0xcc, 0xd7, 0x47, 0x92, 0x27, 0xe5, 0x30, 0x5c, 0xcb, 0xc3, 0x4f, 0x00, 0x00,
+	0x00, 0xff, 0xff, 0x3c, 0x04, 0xec, 0x3c, 0x44, 0x02, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -170,74 +172,146 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// CommunicationClient is the client API for Communication service.
+// FirebaseTokenClient is the client API for FirebaseToken service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type CommunicationClient interface {
+type FirebaseTokenClient interface {
 	// Sends a greeting
-	UpdateToken(ctx context.Context, in *UpdateFirebaseToken, opts ...grpc.CallOption) (*ResultMessages, error)
+	UpdateApi(ctx context.Context, in *UpdateFirebaseToken, opts ...grpc.CallOption) (*ResultMessages, error)
+	UpdateAdmin(ctx context.Context, in *UpdateFirebaseToken, opts ...grpc.CallOption) (*ResultMessages, error)
+	UpdatePaypal(ctx context.Context, in *UpdateFirebaseToken, opts ...grpc.CallOption) (*ResultMessages, error)
 }
 
-type communicationClient struct {
+type firebaseTokenClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewCommunicationClient(cc *grpc.ClientConn) CommunicationClient {
-	return &communicationClient{cc}
+func NewFirebaseTokenClient(cc *grpc.ClientConn) FirebaseTokenClient {
+	return &firebaseTokenClient{cc}
 }
 
-func (c *communicationClient) UpdateToken(ctx context.Context, in *UpdateFirebaseToken, opts ...grpc.CallOption) (*ResultMessages, error) {
+func (c *firebaseTokenClient) UpdateApi(ctx context.Context, in *UpdateFirebaseToken, opts ...grpc.CallOption) (*ResultMessages, error) {
 	out := new(ResultMessages)
-	err := c.cc.Invoke(ctx, "/communication.Communication/UpdateToken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/communication.FirebaseToken/UpdateApi", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// CommunicationServer is the server API for Communication service.
-type CommunicationServer interface {
+func (c *firebaseTokenClient) UpdateAdmin(ctx context.Context, in *UpdateFirebaseToken, opts ...grpc.CallOption) (*ResultMessages, error) {
+	out := new(ResultMessages)
+	err := c.cc.Invoke(ctx, "/communication.FirebaseToken/UpdateAdmin", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *firebaseTokenClient) UpdatePaypal(ctx context.Context, in *UpdateFirebaseToken, opts ...grpc.CallOption) (*ResultMessages, error) {
+	out := new(ResultMessages)
+	err := c.cc.Invoke(ctx, "/communication.FirebaseToken/UpdatePaypal", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// FirebaseTokenServer is the server API for FirebaseToken service.
+type FirebaseTokenServer interface {
 	// Sends a greeting
-	UpdateToken(context.Context, *UpdateFirebaseToken) (*ResultMessages, error)
+	UpdateApi(context.Context, *UpdateFirebaseToken) (*ResultMessages, error)
+	UpdateAdmin(context.Context, *UpdateFirebaseToken) (*ResultMessages, error)
+	UpdatePaypal(context.Context, *UpdateFirebaseToken) (*ResultMessages, error)
 }
 
-// UnimplementedCommunicationServer can be embedded to have forward compatible implementations.
-type UnimplementedCommunicationServer struct {
+// UnimplementedFirebaseTokenServer can be embedded to have forward compatible implementations.
+type UnimplementedFirebaseTokenServer struct {
 }
 
-func (*UnimplementedCommunicationServer) UpdateToken(ctx context.Context, req *UpdateFirebaseToken) (*ResultMessages, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateToken not implemented")
+func (*UnimplementedFirebaseTokenServer) UpdateApi(ctx context.Context, req *UpdateFirebaseToken) (*ResultMessages, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateApi not implemented")
+}
+func (*UnimplementedFirebaseTokenServer) UpdateAdmin(ctx context.Context, req *UpdateFirebaseToken) (*ResultMessages, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAdmin not implemented")
+}
+func (*UnimplementedFirebaseTokenServer) UpdatePaypal(ctx context.Context, req *UpdateFirebaseToken) (*ResultMessages, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdatePaypal not implemented")
 }
 
-func RegisterCommunicationServer(s *grpc.Server, srv CommunicationServer) {
-	s.RegisterService(&_Communication_serviceDesc, srv)
+func RegisterFirebaseTokenServer(s *grpc.Server, srv FirebaseTokenServer) {
+	s.RegisterService(&_FirebaseToken_serviceDesc, srv)
 }
 
-func _Communication_UpdateToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _FirebaseToken_UpdateApi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateFirebaseToken)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CommunicationServer).UpdateToken(ctx, in)
+		return srv.(FirebaseTokenServer).UpdateApi(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/communication.Communication/UpdateToken",
+		FullMethod: "/communication.FirebaseToken/UpdateApi",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CommunicationServer).UpdateToken(ctx, req.(*UpdateFirebaseToken))
+		return srv.(FirebaseTokenServer).UpdateApi(ctx, req.(*UpdateFirebaseToken))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _Communication_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "communication.Communication",
-	HandlerType: (*CommunicationServer)(nil),
+func _FirebaseToken_UpdateAdmin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateFirebaseToken)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FirebaseTokenServer).UpdateAdmin(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/communication.FirebaseToken/UpdateAdmin",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FirebaseTokenServer).UpdateAdmin(ctx, req.(*UpdateFirebaseToken))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _FirebaseToken_UpdatePaypal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateFirebaseToken)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FirebaseTokenServer).UpdatePaypal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/communication.FirebaseToken/UpdatePaypal",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FirebaseTokenServer).UpdatePaypal(ctx, req.(*UpdateFirebaseToken))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _FirebaseToken_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "communication.FirebaseToken",
+	HandlerType: (*FirebaseTokenServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "UpdateToken",
-			Handler:    _Communication_UpdateToken_Handler,
+			MethodName: "UpdateApi",
+			Handler:    _FirebaseToken_UpdateApi_Handler,
+		},
+		{
+			MethodName: "UpdateAdmin",
+			Handler:    _FirebaseToken_UpdateAdmin_Handler,
+		},
+		{
+			MethodName: "UpdatePaypal",
+			Handler:    _FirebaseToken_UpdatePaypal_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

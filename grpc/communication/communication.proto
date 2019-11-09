@@ -7,9 +7,11 @@ option java_outer_classname = "CommunicationProto";
 package communication;
 
 // The greeting service definition.
-service Communication {
+service FirebaseToken {
   // Sends a greeting
-  rpc UpdateToken (UpdateFirebaseToken) returns (ResultMessages) {}
+  rpc UpdateApi (UpdateFirebaseToken) returns (ResultMessages) {}
+  rpc UpdateAdmin (UpdateFirebaseToken) returns (ResultMessages) {}
+  rpc UpdatePaypal (UpdateFirebaseToken) returns (ResultMessages) {}
 }
 
 // The request message containing the user's name.
