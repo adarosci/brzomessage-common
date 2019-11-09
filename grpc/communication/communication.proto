@@ -18,6 +18,7 @@ service FirebaseToken {
 message UpdateFirebaseToken {
   string KeyAccess = 1;
   string FirebaseToken = 2;
+  repeated string Phones  = 3;
 }
 
 // The response message containing the greetings
