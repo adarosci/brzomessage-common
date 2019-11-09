@@ -13,47 +13,85 @@ const (
 	port = ":50051"
 )
 
-var register *FirebaseTokenServer
+var started bool
+
+var registerAPI *FirebaseTokenAPIServer
+var registerPaypal *FirebaseTokenPaypalServer
+var registerAdmin *FirebaseTokenAdminServer
 
 type server struct {
 	communication.UnimplementedFirebaseTokenServer
 }
 
-// FirebaseTokenServer struct
-type FirebaseTokenServer struct {
-	UpdateAPI    func(key, token string, phones []string)
-	UpdateAdmin  func(key, token string, phones []string)
-	UpdatePaypal func(key, token string, phones []string)
+// FirebaseTokenAPIServer struct
+type FirebaseTokenAPIServer struct {
+	Update func(key, token string, phones []string)
+}
+
+// FirebaseTokenAdminServer struct
+type FirebaseTokenAdminServer struct {
+	Update func(key, token string, phones []string)
+}
+
+// FirebaseTokenPaypalServer struct
+type FirebaseTokenPaypalServer struct {
+	Update func(key, token string, phones []string)
 }
 
 // UpdateApi update
 func (s *server) UpdateApi(ctx context.Context, in *communication.UpdateFirebaseToken) (*communication.ResultMessages, error) {
-	if register.UpdateAPI != nil {
-		register.UpdateAPI(in.GetKeyAccess(), in.GetFirebaseToken(), in.GetPhones())
+	if registerAPI != nil {
+		registerAPI.Update(in.GetKeyAccess(), in.GetFirebaseToken(), in.GetPhones())
 	}
 	return &communication.ResultMessages{Success: true}, nil
 }
 
 // UpdateApi update
 func (s *server) UpdateAdmin(ctx context.Context, in *communication.UpdateFirebaseToken) (*communication.ResultMessages, error) {
-	if register.UpdateAdmin != nil {
-		register.UpdateAdmin(in.GetKeyAccess(), in.GetFirebaseToken(), in.GetPhones())
+	if registerAdmin != nil {
+		registerAdmin.Update(in.GetKeyAccess(), in.GetFirebaseToken(), in.GetPhones())
 	}
 	return &communication.ResultMessages{Success: true}, nil
 }
 
 // UpdateApi update
 func (s *server) UpdatePaypal(ctx context.Context, in *communication.UpdateFirebaseToken) (*communication.ResultMessages, error) {
-	if register.UpdatePaypal != nil {
-		register.UpdatePaypal(in.GetKeyAccess(), in.GetFirebaseToken(), in.GetPhones())
+	if registerPaypal != nil {
+		registerPaypal.Update(in.GetKeyAccess(), in.GetFirebaseToken(), in.GetPhones())
 	}
 	return &communication.ResultMessages{Success: true}, nil
 }
 
 // Start serve
-func (f *FirebaseTokenServer) Start() {
-	if register == nil {
-		register = f
+func (f *FirebaseTokenAPIServer) Start() *FirebaseTokenAPIServer {
+	if registerAPI == nil {
+		registerAPI = f
+		start()
+	}
+	return f
+}
+
+// Start serve
+func (f *FirebaseTokenPaypalServer) Start() *FirebaseTokenPaypalServer {
+	if registerPaypal == nil {
+		registerPaypal = f
+		start()
+	}
+	return f
+}
+
+// Start serve
+func (f *FirebaseTokenAdminServer) Start() *FirebaseTokenAdminServer {
+	if registerAdmin == nil {
+		registerAdmin = f
+		start()
+	}
+	return f
+}
+
+func start() {
+	if !started {
+		started = true
 		go func() {
 			exit := make(chan bool)
 			lis, err := net.Listen("tcp", port)
