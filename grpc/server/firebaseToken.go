@@ -57,23 +57,6 @@ func (s *serverPaypal) UpdatePaypal(ctx context.Context, in *communication.Updat
 func (f *FirebaseTokenAPIServer) Start() *FirebaseTokenAPIServer {
 	if registerAPI == nil {
 		registerAPI = f
-		start()
-	}
-	return f
-}
-
-// Start serve
-func (f *FirebaseTokenPaypalServer) Start() *FirebaseTokenPaypalServer {
-	if registerPaypal == nil {
-		registerPaypal = f
-		start()
-	}
-	return f
-}
-
-func start() {
-	if !started {
-		started = true
 		go func() {
 			lis, err := net.Listen("tcp", portAPI)
 			if err != nil {
@@ -85,6 +68,14 @@ func start() {
 				log.Fatalf("failed to serve: %v", err)
 			}
 		}()
+	}
+	return f
+}
+
+// Start serve
+func (f *FirebaseTokenPaypalServer) Start() *FirebaseTokenPaypalServer {
+	if registerPaypal == nil {
+		registerPaypal = f
 		go func() {
 			lis, err := net.Listen("tcp", portPaypal)
 			if err != nil {
@@ -97,4 +88,5 @@ func start() {
 			}
 		}()
 	}
+	return f
 }
