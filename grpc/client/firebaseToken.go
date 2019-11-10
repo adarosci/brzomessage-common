@@ -16,10 +16,12 @@ type FirebaseTokenCommunication struct{}
 
 func init() {
 	var err error
-	conn, err = grpc.Dial("localhost:50051", grpc.WithInsecure(), grpc.WithBlock())
-	if err != nil {
-		fmt.Printf("did not connect: %v", err)
-	}
+	go func() {
+		conn, err = grpc.Dial("localhost:50051", grpc.WithInsecure(), grpc.WithBlock())
+		if err != nil {
+			fmt.Printf("did not connect: %v", err)
+		}
+	}()
 }
 
 // UpdateToken update token server

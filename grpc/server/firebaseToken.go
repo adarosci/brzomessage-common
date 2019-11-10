@@ -93,7 +93,6 @@ func start() {
 	if !started {
 		started = true
 		go func() {
-			exit := make(chan bool)
 			lis, err := net.Listen("tcp", port)
 			if err != nil {
 				log.Fatalf("failed to listen: %v", err)
@@ -103,8 +102,6 @@ func start() {
 			if err := s.Serve(lis); err != nil {
 				log.Fatalf("failed to serve: %v", err)
 			}
-			<-exit
-			<-exit
 		}()
 	}
 }
