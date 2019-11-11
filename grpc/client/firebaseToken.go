@@ -3,6 +3,7 @@ package client
 import (
 	"context"
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/adarosci/brzomessage-common/grpc/communication"
@@ -18,13 +19,13 @@ type FirebaseTokenCommunication struct{}
 func init() {
 	var err error
 	go func() {
-		connAPI, err = grpc.Dial("localhost:50051", grpc.WithInsecure(), grpc.WithBlock())
+		connAPI, err = grpc.Dial(os.Getenv("GRPC_HOST_API"), grpc.WithInsecure(), grpc.WithBlock())
 		if err != nil {
 			fmt.Printf("did not connect api: %v", err)
 		}
 	}()
 	go func() {
-		connPaypal, err = grpc.Dial("localhost:50052", grpc.WithInsecure(), grpc.WithBlock())
+		connPaypal, err = grpc.Dial(os.Getenv("GRPC_HOST_PAYPAL"), grpc.WithInsecure(), grpc.WithBlock())
 		if err != nil {
 			fmt.Printf("did not connect paypal: %v", err)
 		}
