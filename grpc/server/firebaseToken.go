@@ -4,14 +4,10 @@ import (
 	"context"
 	"log"
 	"net"
+	"os"
 
 	"github.com/adarosci/brzomessage-common/grpc/communication"
 	"google.golang.org/grpc"
-)
-
-const (
-	portAPI    = ":50051"
-	portPaypal = ":50052"
 )
 
 var started bool
@@ -58,7 +54,7 @@ func (f *FirebaseTokenAPIServer) Start() *FirebaseTokenAPIServer {
 	if registerAPI == nil {
 		registerAPI = f
 		go func() {
-			lis, err := net.Listen("tcp", portAPI)
+			lis, err := net.Listen("tcp", os.Getenv("GRPC_HOST_API"))
 			if err != nil {
 				log.Fatalf("failed to listen: %v", err)
 			}
@@ -77,7 +73,7 @@ func (f *FirebaseTokenPaypalServer) Start() *FirebaseTokenPaypalServer {
 	if registerPaypal == nil {
 		registerPaypal = f
 		go func() {
-			lis, err := net.Listen("tcp", portPaypal)
+			lis, err := net.Listen("tcp", os.Getenv("GRPC_HOST_PAYPAL"))
 			if err != nil {
 				log.Fatalf("failed to listen: %v", err)
 			}
