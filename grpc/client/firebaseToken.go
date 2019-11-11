@@ -34,6 +34,7 @@ func init() {
 // UpdateToken update token server
 func (gc FirebaseTokenCommunication) UpdateToken(keyAccess, firebaseToken string, phones []string) error {
 	go func() {
+
 		c := communication.NewFirebaseTokenClient(connAPI)
 		ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 		defer cancel()
