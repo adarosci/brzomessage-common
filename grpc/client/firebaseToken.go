@@ -10,33 +10,18 @@ import (
 	"google.golang.org/grpc"
 )
 
-var connAPI *grpc.ClientConn
-var connPaypal *grpc.ClientConn
-
 // FirebaseTokenCommunication communication
 type FirebaseTokenCommunication struct{}
-
-func init() {
-	var err error
-	go func() {
-		connAPI, err = grpc.Dial(os.Getenv("GRPC_HOST_API"), grpc.WithInsecure(), grpc.WithBlock())
-		if err != nil {
-			fmt.Printf("did not connect api: %v", err)
-		}
-	}()
-	go func() {
-		connPaypal, err = grpc.Dial(os.Getenv("GRPC_HOST_PAYPAL"), grpc.WithInsecure(), grpc.WithBlock())
-		if err != nil {
-			fmt.Printf("did not connect paypal: %v", err)
-		}
-	}()
-}
 
 // UpdateToken update token server
 func (gc FirebaseTokenCommunication) UpdateToken(keyAccess, firebaseToken string, phones []string) error {
 	go func() {
-
-		c := communication.NewFirebaseTokenClient(connAPI)
+		conn, err := grpc.Dial(os.Getenv("GRPC_HOST_API"), grpc.WithInsecure(), grpc.WithBlock())
+		if err != nil {
+			fmt.Printf("did not connect api: %v", err)
+		}
+		defer conn.Close()
+		c := communication.NewFirebaseTokenClient(conn)
 		ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 		defer cancel()
 		param := &communication.UpdateFirebaseToken{
@@ -47,7 +32,12 @@ func (gc FirebaseTokenCommunication) UpdateToken(keyAccess, firebaseToken string
 		c.UpdateApi(ctx, param)
 	}()
 	go func() {
-		c := communication.NewFirebaseTokenClient(connPaypal)
+		conn, err := grpc.Dial(os.Getenv("GRPC_HOST_PAYPAL"), grpc.WithInsecure(), grpc.WithBlock())
+		if err != nil {
+			fmt.Printf("did not connect paypal: %v", err)
+		}
+		defer conn.Close()
+		c := communication.NewFirebaseTokenClient(conn)
 		ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 		defer cancel()
 		param := &communication.UpdateFirebaseToken{
