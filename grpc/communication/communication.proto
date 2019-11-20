@@ -24,7 +24,26 @@ message UpdateFirebaseToken {
 // The response message containing the greetings
 message ResultMessages {
   bool Success = 1;
-  string error = 2;
-  string message = 3;
-  string result = 4;
+  string Error = 2;
+  string Message = 3;
+  string Result = 4;
+}
+
+service EmailService {
+   rpc ConfirmEmail (UserInfoRequest) returns (ResultMessages);
+   rpc ResetPassword (UserInfoRequest) returns (ResultMessages);
+   rpc PurchaseCredits (PurchaseCreditsRequest) returns (ResultMessages);
+}
+
+message UserInfoRequest {
+  int32 PersonID = 1;
+}
+
+message PurchaseCreditsRequest {
+  string PhoneNumber = 1;
+  int32 Value = 2;
+  string PlanSelect = 3;
+  string Date = 4;
+  string ID = 5;
+  string Description = 6;
 }

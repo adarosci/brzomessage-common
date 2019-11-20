@@ -1,6 +1,6 @@
 module github.com/adarosci/brzomessage-common/grpc/server
 
-go 1.12
+go 1.13
 
 require (
 	github.com/adarosci/brzomessage-common/grpc/communication v0.0.0-20191110191059-8089c3bac056
